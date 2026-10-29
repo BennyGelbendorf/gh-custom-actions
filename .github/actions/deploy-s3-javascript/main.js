@@ -10,6 +10,8 @@ async function run() {
     core.notice(`Deploying ${distFolder} to ${s3uri} in ${bucketRegion}`);
 
     await exec.exec('aws', ['s3', 'sync', distFolder, s3uri, '--region', bucketRegion]);
+
+    const websiteUrl = `http://${bucket}.s3-website-${bucketRegion}.amazonaws.com`;
 }
 
 run().catch((error) => {

@@ -71,3 +71,6 @@ jobs:
             bucket: gha-custom-action-hosting-bennyg
             dist-folder: ./dist
             bucket-region: eu-north-1
+      - name: Output information
+        run: |
+          echo "Live URL ${{ steps.deploy.outputs.website-url }}"
