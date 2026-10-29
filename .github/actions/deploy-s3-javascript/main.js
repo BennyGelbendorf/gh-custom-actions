@@ -12,6 +12,7 @@ async function run() {
     await exec.exec('aws', ['s3', 'sync', distFolder, s3uri, '--region', bucketRegion]);
 
     const websiteUrl = `http://${bucket}.s3-website-${bucketRegion}.amazonaws.com`;
+    core.setOutput('website-url', websiteUrl); // ::set-output
 }
 
 run().catch((error) => {

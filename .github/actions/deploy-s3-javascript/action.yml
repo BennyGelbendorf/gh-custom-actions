@@ -9,11 +9,11 @@ inputs:
     required: false
     default: 'us-east-1'
   dist-folder:
-    description: 'The folder containing the dpeloyable files.'
+    description: 'The folder containing the deployable files.'
     required: true
-  outputs:
-    website-url:
-      description: 'The URL of the deployed website.'
+outputs:
+  website-url:
+    description: 'The URL of the deployed website.'
 runs:
   using: 'node20'
   main: 'main.js'
