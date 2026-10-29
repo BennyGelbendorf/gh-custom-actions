@@ -12,6 +12,8 @@ jobs:
         uses: actions/checkout@v3
       - name: Load & Cache dependencies
         uses: ./.github/actions/cache-deps
+        with:
+          caching: 'false'
       - name: Lint code
         run: npm run lint
   test:
@@ -52,7 +54,7 @@ jobs:
       - name: Get code
         uses: actions/checkout@v3
       - name: Get build artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: dist-files
           path: ./dist

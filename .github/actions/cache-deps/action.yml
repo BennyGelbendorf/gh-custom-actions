@@ -1,5 +1,10 @@
 name: 'Get Cache Dependencies'
 description: 'Get Dependencies (npm) and chace them'
+inputs:
+  caching:
+    description: 'weather to cache dependencies or not'
+    required: false
+    default: 'true'
 runs:
   using: 'composite'
   steps:
